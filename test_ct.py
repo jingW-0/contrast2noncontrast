@@ -318,13 +318,6 @@ if __name__ == '__main__':
     else:
         netG = model.netG
 
-    # if opt.direction == "AtoB":
-    #     result_dir = "D:\\contrast\\project2\\result2\\" + opt.name + "\\AtoB"
-    # else:
-    #     result_dir = "D:\\contrast\\project2\\result2\\" + opt.name + "\\BtoA"
-    # if not os.path.exists(result_dir):
-    #     os.makedirs(result_dir)
-    #
     if opt.direction == "AtoB":
         result_dir = "D:\\contrast\\project2\\result_heart\\" + opt.name + "\\test_"+opt.epoch+"\\AtoB"
     else:
@@ -335,48 +328,4 @@ if __name__ == '__main__':
     if not os.path.exists(result_dir):
         os.makedirs(result_dir)
 
-    # if opt.direction == "AtoB":
-    #     result_dir = "./slice_result/" + opt.name + "/AtoB"
-    # else:
-    #     result_dir = "./slice_result/" + opt.name + "/BtoA"
-    # if not os.path.exists(result_dir):
-    #     os.makedirs(result_dir)
-    # input_dir = "D:/contrast/project/pe_contrast_transfer/iso/test/axial/A"
-    # input_dir = "D:/contrast/project/pe_contrast_transfer/slices/axial/testA"
-    # folder_test(opt, input_dir, result_dir, netG)
-    # series_test(opt, result_dir, netG)
-    #
-    # series_test_heart(opt, result_dir, netG, "file_name", "D:\\IMAGES\\Cardiac_data_for_image_translation\\contrast_test.csv")
-    # series_test_heart(opt, result_dir, netG, "contrast","D:\\IMAGES\\Cardiac_data_for_image_translation\\seg_train.csv")
-    # series_test_heart(opt, result_dir, netG, "contrast","D:\\IMAGES\\Cardiac_data_for_image_translation\\seg_val.csv")
     series_test_heart(opt, result_dir, netG, "contrast","D:\\IMAGES\\Cardiac_data_for_image_translation\\seg_test.csv")
-
-    # from_folder = "D:\\IMAGES\\Cardiac_data_for_image_translation\\manual\\img"
-    # to_folder = "D:\\IMAGES\\Cardiac_data_for_image_translation\\manual\\img_nc"
-    # series_gen_heart(opt, from_folder, to_folder, netG)
-
-    # dataset = create_dataset(opt)  # create a dataset given opt.dataset_mode and other options
-    # train_dataset = create_dataset(util.copyconf(opt, phase="train"))
-    # model = create_model(opt)      # create a model given opt.model and other options
-    # # create a webpage for viewing the results
-    # web_dir = os.path.join(opt.results_dir, opt.name, '{}_{}'.format(opt.phase, opt.epoch))  # define the website directory
-    # print('creating web directory', web_dir)
-    # webpage = html.HTML(web_dir, 'Experiment = %s, Phase = %s, Epoch = %s' % (opt.name, opt.phase, opt.epoch))
-    #
-    # for i, data in enumerate(dataset):
-    #     if i == 0:
-    #         model.data_dependent_initialize(data)
-    #         model.setup(opt)               # regular setup: load and print networks; create schedulers
-    #         model.parallelize()
-    #         if opt.eval:
-    #             model.eval()
-    #     if i >= opt.num_test:  # only apply our model to opt.num_test images.
-    #         break
-    #     model.set_input(data)  # unpack data from data loader
-    #     model.test()           # run inference
-    #     visuals = model.get_current_visuals()  # get image results
-    #     img_path = model.get_image_paths()     # get image paths
-    #     if i % 5 == 0:  # save images to an HTML file
-    #         print('processing (%04d)-th image... %s' % (i, img_path))
-    #     save_images(webpage, visuals, img_path, width=opt.display_winsize)
-    # webpage.save()  # save the HTML
