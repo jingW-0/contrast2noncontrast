@@ -6,7 +6,7 @@ from .hDCE import PatchHDCELoss
 import util.util as util
 
 # DCE instead of NCE
-class CUT2Model(BaseModel):
+class CUTDCEModel(BaseModel):
     """ This class implements CUT and FastCUT model, described in the paper
     Contrastive Learning for Unpaired Image-to-Image Translation
     Taesung Park, Alexei A. Efros, Richard Zhang, Jun-Yan Zhu

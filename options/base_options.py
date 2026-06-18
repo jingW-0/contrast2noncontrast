@@ -45,7 +45,7 @@ class BaseOptions():
 
         # model parameters
 
-        parser.add_argument('--model', type=str, default='cut2', help='chooses which model to use.')
+        parser.add_argument('--model', type=str, default='cutDCE', help='chooses which model to use.')
         # parser.add_argument('--model', type=str, default='cut', help='chooses which model to use.')
         parser.add_argument('--input_nc', type=int, default=1, help='# of input image channels: 3 for RGB and 1 for grayscale')
         parser.add_argument('--output_nc', type=int, default=1, help='# of output image channels: 3 for RGB and 1 for grayscale')
@@ -78,7 +78,7 @@ class BaseOptions():
         parser.add_argument('--random_scale_max', type=float, default=3.0,
                             help='(used for single image translation) Randomly scale the image by the specified factor as data augmentation.')
         # additional parameters
-        parser.add_argument('--epoch', type=str, default='10', help='which epoch to load? set to latest to use latest cached model')
+        parser.add_argument('--epoch', type=str, default='latest', help='which epoch to load? set to latest to use latest cached model')
         parser.add_argument('--verbose', action='store_true', help='if specified, print more debugging information')
         parser.add_argument('--suffix', default='', type=str, help='customized suffix: opt.name = opt.name + suffix: e.g., {model}_{netG}_size{load_size}')
 
