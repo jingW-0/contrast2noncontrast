@@ -42,8 +42,8 @@ class BaseOptions():
         # parser.add_argument('--dataroot', default='placeholder', help='path to images (should have subfolders trainA, trainB, valA, valB, etc)')
         # parser.add_argument('--name', type=str, default='cardiac_dce_1024', help='name of the experiment. It decides where to store samples and models')
         # parser.add_argument('--easy_label', type=str, default='cardiac_dce_1024', help='Interpretable name')
-        parser.add_argument('--name', type=str, default='cardiac_dce_1024_gl_gamma10', help='name of the experiment. It decides where to store samples and models')
-        parser.add_argument('--easy_label', type=str, default='cardiac_dce_1024_gl_gamma10', help='Interpretable name')
+        parser.add_argument('--name', type=str, default='cardiac_test', help='name of the experiment. It decides where to store samples and models')
+        parser.add_argument('--easy_label', type=str, default='cardiac_test', help='Interpretable name')
         # parser.add_argument('--name', type=str, default='gl_soft_gamma10_gl2',
         #                     help='name of the experiment. It decides where to store samples and models')
         # parser.add_argument('--easy_label', type=str, default='gl_soft_gamma10_gl2', help='Interpretable name')
@@ -61,11 +61,11 @@ class BaseOptions():
 
         parser.add_argument('--gpu_ids', type=str, default='0', help='gpu ids: e.g. 0  0,1,2, 0,2. use -1 for CPU')
         # parser.add_argument('--checkpoints_dir', type=str, default='D:\\contrast\\project2\\checkpoints_mix', help='models are saved here')
-        parser.add_argument('--checkpoints_dir', type=str, default='D:\\contrast\\project2\\checkpoints_cardiac', help='models are saved here')
+        parser.add_argument('--checkpoints_dir', type=str, default='./checkpoints_test', help='models are saved here')
 
         # model parameters
 
-        parser.add_argument('--model', type=str, default='cut_gl', help='chooses which model to use.')
+        parser.add_argument('--model', type=str, default='cut2', help='chooses which model to use.')
         # parser.add_argument('--model', type=str, default='cut_gl', help='chooses which model to use.')
         parser.add_argument('--input_nc', type=int, default=1, help='# of input image channels: 3 for RGB and 1 for grayscale')
         parser.add_argument('--output_nc', type=int, default=1, help='# of output image channels: 3 for RGB and 1 for grayscale')

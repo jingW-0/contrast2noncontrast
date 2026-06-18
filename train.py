@@ -6,7 +6,7 @@ from models import create_model
 from util.visualizer import Visualizer
 from torchvision.transforms import RandomAffine, ToPILImage, RandomCrop, ToTensor, Resize
 # from datasets import ImageDataset, ImageDatasetFromFile
-from datasets0 import ImageDataset
+from datasets import ImageDataset
 from torch.utils.data import DataLoader
 import os
 os.environ["OMP_NUM_THREADS"] = "1"
