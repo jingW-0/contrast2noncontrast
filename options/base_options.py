@@ -23,8 +23,6 @@ class BaseOptions():
     def initialize(self, parser):
         """Define the common options that are used in both training and test."""
         # basic parameters
-        # parser.add_argument('--dataroot', default='D:\\contrast\\image\\100_iso\\axial',
-        #                     help='path to images (should have subfolders A, B)')
         parser.add_argument('--dataroot', default='D:\\IMAGES\\Cardiac_data_for_image_translation\\axial\\train',
                             help='path to images (should have subfolders A, B)')
         parser.add_argument('--data_train_A', default='file_list.xlsx')
@@ -32,41 +30,23 @@ class BaseOptions():
 
         parser.add_argument("--read_folder", type=bool, default=True)
 
-        parser.add_argument("--with_metric", type=str, default=None, help="choose from 'metric', 'ssim', or None")
-        parser.add_argument("--metric_tol", type=float, default=5)
-        parser.add_argument("--ssim_th", type=float, default=0.8)
-        parser.add_argument("--max_itr", type=int, default=20)
+        # parser.add_argument("--with_metric", type=str, default=None, help="choose from 'metric', 'ssim', or None")
+        # parser.add_argument("--metric_tol", type=float, default=5)
+        # parser.add_argument("--ssim_th", type=float, default=0.8)
+        # parser.add_argument("--max_itr", type=int, default=20)
 
-        # parser.add_argument('--dataroot', default='D:\\contrast\\image\\error',
-        #                     help='path to images (should have subfolders A, B)')
         # parser.add_argument('--dataroot', default='placeholder', help='path to images (should have subfolders trainA, trainB, valA, valB, etc)')
-        # parser.add_argument('--name', type=str, default='cardiac_dce_1024', help='name of the experiment. It decides where to store samples and models')
-        # parser.add_argument('--easy_label', type=str, default='cardiac_dce_1024', help='Interpretable name')
+
         parser.add_argument('--name', type=str, default='cardiac_test', help='name of the experiment. It decides where to store samples and models')
         parser.add_argument('--easy_label', type=str, default='cardiac_test', help='Interpretable name')
-        # parser.add_argument('--name', type=str, default='gl_soft_gamma10_gl2',
-        #                     help='name of the experiment. It decides where to store samples and models')
-        # parser.add_argument('--easy_label', type=str, default='gl_soft_gamma10_gl2', help='Interpretable name')
-        # parser.add_argument('--name', type=str, default='gl_soft_gamma50',
-        #                     help='name of the experiment. It decides where to store samples and models')
-        # parser.add_argument('--easy_label', type=str, default='gl_soft_gamma50', help='Interpretable name')
-        # parser.add_argument('--name', type=str, default='cut_DCE',
-        #                     help='name of the experiment. It decides where to store samples and models')
-        # parser.add_argument('--easy_label', type=str, default='cut_DCE', help='Interpretable name')
-
-        # parser.add_argument('--name', type=str, default='cut2_full_1024',
-        #                     help='name of the experiment. It decides where to store samples and models')
-        # parser.add_argument('--easy_label', type=str, default='cut2_full_test', help='Interpretable name')
-
 
         parser.add_argument('--gpu_ids', type=str, default='0', help='gpu ids: e.g. 0  0,1,2, 0,2. use -1 for CPU')
-        # parser.add_argument('--checkpoints_dir', type=str, default='D:\\contrast\\project2\\checkpoints_mix', help='models are saved here')
         parser.add_argument('--checkpoints_dir', type=str, default='./checkpoints_test', help='models are saved here')
 
         # model parameters
 
         parser.add_argument('--model', type=str, default='cut2', help='chooses which model to use.')
-        # parser.add_argument('--model', type=str, default='cut_gl', help='chooses which model to use.')
+        # parser.add_argument('--model', type=str, default='cut', help='chooses which model to use.')
         parser.add_argument('--input_nc', type=int, default=1, help='# of input image channels: 3 for RGB and 1 for grayscale')
         parser.add_argument('--output_nc', type=int, default=1, help='# of output image channels: 3 for RGB and 1 for grayscale')
         parser.add_argument('--ngf', type=int, default=64, help='# of gen filters in the last conv layer')
