@@ -75,4 +75,4 @@ To load image paths from the Excel manifests instead of scanning `--dataroot`:
 python train.py --read_folder False --data_train_A filelist_A.xlsx --data_train_B filelist_B.xlsx
 ```
 
-Each workbook must contain a column named `files`. Local file-list workbooks are ignored by Git.
+Each workbook must contain a column named `files`.
