@@ -9,6 +9,9 @@ dependencies:
   - pytorch=1.13.1
   - torchvision=0.14.1
   - pytorch-cuda=11.7
+  - openssl
+  - ca-certificates
+  - certifi
   - numpy<2
   - scipy
   - pandas
@@ -25,4 +28,4 @@ dependencies:
       - scikit-image
       - SimpleITK
       - tqdm
-      - visdom
+      - visdom==0.2.4

@@ -57,6 +57,23 @@ Start Visdom in a separate terminal:
 python -m visdom.server -p 8097
 ```
 
+Visdom downloads its browser assets over HTTPS the first time it starts. If it
+fails with an SSL certificate or ASN.1 error, repair the certificate packages
+inside the activated environment:
+
+```bash
+conda install --force-reinstall openssl ca-certificates certifi
+```
+
+On Windows PowerShell, also clear invalid certificate-file overrides before
+retrying:
+
+```powershell
+Remove-Item Env:SSL_CERT_FILE -ErrorAction SilentlyContinue
+Remove-Item Env:REQUESTS_CA_BUNDLE -ErrorAction SilentlyContinue
+python -m visdom.server -p 8097
+```
+
 View all training options:
 
 ```bash
