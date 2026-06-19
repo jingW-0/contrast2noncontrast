@@ -14,3 +14,5 @@ dependencies:
   - visdom==0.1.8
   - packaging
   - GPUtil==1.4.0
+  - pandas
+  - openpyxl

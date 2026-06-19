@@ -5,8 +5,8 @@ from data import create_dataset
 from models import create_model
 from util.visualizer import Visualizer
 from torchvision.transforms import RandomAffine, ToPILImage, RandomCrop, ToTensor, Resize
-# from datasets import ImageDataset, ImageDatasetFromFile
-from datasets import ImageDataset
+from datasets import ImageDataset, ImageDatasetFromFile
+
 from torch.utils.data import DataLoader
 import os
 os.environ["OMP_NUM_THREADS"] = "1"
@@ -37,16 +37,16 @@ if __name__ == '__main__':
                         ToTensor()]
 
     if opt.read_folder:
+        print("using folder input ...")
         dataset = DataLoader(
             ImageDataset(opt.dataroot, transforms_1=transforms_1, unaligned=True), batch_size=opt.batch_size,
             shuffle=True, num_workers=opt.num_threads)
     else:
-        raise ValueError("USE FOLDER INPUT")
-        # dataset = DataLoader(
-        #     ImageDatasetFromFile(opt.data_train_A, opt.data_train_B, transforms_1=transforms_1, unaligned=True,
-        #                          max_itr=opt.max_itr, with_metric=opt.with_metric, metric_tol=opt.metric_tol,
-        #                          ssim_th=opt.ssim_th),
-        #     batch_size=opt.batch_size, shuffle=True, num_workers=opt.num_threads)
+        # raise ValueError("USE FOLDER INPUT")
+        print("using file input ...")
+        dataset = DataLoader(
+            ImageDatasetFromFile(opt.data_train_A, opt.data_train_B, transforms_1=transforms_1, unaligned=True),
+            batch_size=opt.batch_size, shuffle=True, num_workers=opt.num_threads)
 
     dataset_size = len(dataset)    # get the number of images in the dataset.
 

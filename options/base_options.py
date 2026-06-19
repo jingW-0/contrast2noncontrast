@@ -25,17 +25,10 @@ class BaseOptions():
         # basic parameters
         parser.add_argument('--dataroot', default='D:\\IMAGES\\Cardiac_data_for_image_translation\\axial\\train',
                             help='path to images (should have subfolders A, B)')
-        parser.add_argument('--data_train_A', default='file_list.xlsx')
-        parser.add_argument('--data_train_B', default='file_list.xlsx')
+        parser.add_argument('--data_train_A', default='filelist_A.xlsx', help='path to the excel file containing the list of training images for domain A, header should be "files"')
+        parser.add_argument('--data_train_B', default='filelist_B.xlsx', help='path to the excel file containing the list of training images for domain B, header should be "files"')
 
-        parser.add_argument("--read_folder", type=bool, default=True)
-
-        # parser.add_argument("--with_metric", type=str, default=None, help="choose from 'metric', 'ssim', or None")
-        # parser.add_argument("--metric_tol", type=float, default=5)
-        # parser.add_argument("--ssim_th", type=float, default=0.8)
-        # parser.add_argument("--max_itr", type=int, default=20)
-
-        # parser.add_argument('--dataroot', default='placeholder', help='path to images (should have subfolders trainA, trainB, valA, valB, etc)')
+        parser.add_argument("--read_folder", type=util.str2bool, nargs='?', const=True, default=True, help="whether read data from folder or from file")
 
         parser.add_argument('--name', type=str, default='cardiac_test', help='name of the experiment. It decides where to store samples and models')
         parser.add_argument('--easy_label', type=str, default='cardiac_test', help='Interpretable name')
