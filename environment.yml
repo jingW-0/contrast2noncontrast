@@ -1,4 +1,4 @@
-name: contrastive-unpaired-translation
+name: cutdce
 channels:
   - pytorch
   - nvidia
