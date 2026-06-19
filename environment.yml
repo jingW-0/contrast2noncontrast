@@ -1,18 +1,28 @@
 name: contrastive-unpaired-translation
 channels:
-- pytorch
-- defaults
+  - pytorch
+  - nvidia
+  - defaults
 dependencies:
-- python=3.6
-- pytorch=1.4.0
-- scipy
-- pip:
-  - dominate==2.4.0
-  - torchvision==0.5.0
-  - Pillow==6.1.0
-  - numpy==1.16.4
-  - visdom==0.1.8
-  - packaging
-  - GPUtil==1.4.0
+  - python=3.9
+  - pip
+  - pytorch=1.13.1
+  - torchvision=0.14.1
+  - pytorch-cuda=11.7
+  - numpy<2
+  - scipy
   - pandas
-  - openpyxl
+  - pillow
+  - pip:
+      - beautifulsoup4
+      - dominate
+      - GPUtil
+      - matplotlib
+      - openpyxl
+      - opencv-python
+      - packaging
+      - requests
+      - scikit-image
+      - SimpleITK
+      - tqdm
+      - visdom

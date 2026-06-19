@@ -1,8 +1,19 @@
-torch>=1.4.0
-torchvision>=0.5.0
-dominate>=2.4.0
-visdom>=0.1.8.8
-packaging
-GPUtil>=1.4.0
+# Python 3.9
+torch==1.13.1
+torchvision==0.14.1
+numpy<2
+scipy
 pandas
+Pillow
+beautifulsoup4
+dominate
+GPUtil
+matplotlib
 openpyxl
+opencv-python
+packaging
+requests
+scikit-image
+SimpleITK
+tqdm
+visdom
